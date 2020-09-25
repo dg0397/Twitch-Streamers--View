@@ -1,24 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import Header from 'components/Header'
+import Footer from 'components/Footer'
+import Menu from 'components/Menu'
+
+import Home from 'pages/Home'
+import Online from 'pages/Online'
+import Ofline from 'pages/Ofline'
+
+import { Route, Switch } from 'wouter';
+
+import { StreamersContextProvider } from 'context/StreamerContext';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App-content">
+        <Header/>
+        <Menu/>
+        <div className = 'Streamers'>
+          <StreamersContextProvider>
+            <Switch>
+              <Route path = '/' component = {Home} />
+              <Route path = '/online' component = {Online} />
+              <Route path = '/ofline' component = {Ofline} />
+            </Switch>
+          </StreamersContextProvider>
+        </div>
+        <Footer/>
+      </div>
     </div>
   );
 }
