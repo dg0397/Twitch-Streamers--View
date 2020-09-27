@@ -6,14 +6,14 @@ const USERS = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck",
 
 
 export default function useStreamers(){
-    const [data,setData] = useState([])
+    const {channelsStatus,setChannelsStatus} = useContext(StreamersContext)
     const [loading,setLoading] = useState([])
 
     useEffect(()=>{
         const interval = setTimeout(()=> {
-            getStreamers(setData,setLoading,{channels : USERS})
+            getStreamers(setChannelsStatus,setLoading,{channels : USERS})
         },5000)
         return ()=> clearTimeout(interval)
-    },[setData])
-    return {data,loading}
+    },[])
+    return {channelsStatus,loading}
 }

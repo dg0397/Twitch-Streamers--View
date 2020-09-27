@@ -6,8 +6,8 @@ import Footer from 'components/Footer'
 //import Menu from 'components/Menu'
 
 import Home from 'pages/Home'
-//import Online from 'pages/Online'
-//import Ofline from 'pages/Ofline'
+import Online from 'pages/Online'
+import Ofline from 'pages/Ofline'
 
 import { Route, Switch } from 'wouter';
 
@@ -22,6 +22,8 @@ function App() {
           <StreamersContextProvider>
             <Switch>
               <Route path = '/' component = {Home} />
+              <Route path = '/online' component = {Online} />
+              <Route path = '/ofline' component = {Ofline} />
             </Switch>
           </StreamersContextProvider>
         </div>

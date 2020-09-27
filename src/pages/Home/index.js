@@ -1,12 +1,23 @@
 import useStreamers from 'hooks/useStreamers'
 import React from 'react'
-//import StreamerList from 'components/StreamerList'
+import { Link } from 'wouter';
+import StreamerList from 'components/StreamerList'
 
 function Home() {
-    const {data,loading} = useStreamers();
-    console.log(data,loading)
+    const {channelsStatus,loading} = useStreamers();
+    console.log(channelsStatus,loading)
     return (
-        <h1>Hello</h1>
+        <>
+            <h1>Hello</h1>
+            <Link href = "/online">Online</Link>
+            <Link href = "/ofline">Ofline</Link>
+            <>
+                {
+                    loading ? <p>Loading...</p> :
+                    <StreamerList channels = {channelsStatus}/>
+                }
+            </>
+        </>
     )
 }
 

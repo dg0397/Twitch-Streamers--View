@@ -3,9 +3,9 @@ import React, {useState} from 'react'
 const Context = React.createContext({});
 
 export function StreamersContextProvider({children}){
-    const [usersStatus,setUsersStatus] = useState([])
+    const [channelsStatus,setChannelsStatus] = useState([])
     return (
-        <Context.Provider value = {{usersStatus,setUsersStatus}} >
+        <Context.Provider value = {{channelsStatus,setChannelsStatus}} >
             {children}
         </Context.Provider>
     )
