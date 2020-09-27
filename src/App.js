@@ -12,12 +12,14 @@ import Ofline from 'pages/Ofline'
 import { Route, Switch } from 'wouter';
 
 import { StreamersContextProvider } from 'context/StreamerContext';
+import Menu from 'components/Menu';
 
 function App() {
   return (
     <div className="App">
       <div className="App-content">
         <Header/>
+        <Menu/>
         <div className = 'Streamers'>
           <StreamersContextProvider>
             <Switch>

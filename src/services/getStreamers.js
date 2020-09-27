@@ -10,7 +10,9 @@ export default function getStreamers(setState,setStatus,{channels}) {
 
             return {status,display_name,logo,url,partner}
         }))
-        .then(data => setState(data))
-    setStatus(false)
+        .then(data => {
+            setState(data)
+            setStatus(false)
+        })
 }
 
