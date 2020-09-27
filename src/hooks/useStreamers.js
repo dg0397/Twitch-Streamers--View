@@ -11,7 +11,7 @@ export default function useStreamers(){
 
     useEffect(()=>{
         const interval = setTimeout(()=> {
-            getStreamers(setLoading,{channels : USERS})
+            getStreamers(setData,setLoading,{channels : USERS})
         },5000)
         return ()=> clearTimeout(interval)
     },[setData])
