@@ -1,0 +1,34 @@
+.Container-Menu{
+    width: 100%;
+    position: relative;
+}
+
+.Container-Menu .Menu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.Container-Menu .Menu p {
+    font-size: 2rem;
+}
+
+.Container-Menu ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    font-size: 1.5rem;
+    z-index: -10;
+    transition: all .5s ease-in;
+    position: absolute;
+    transform: translateY(-100%);
+    background: aliceblue;
+    color: black;
+}
+.Container-Menu ul.active{
+    transform:  translateY(0);
+    z-index: 10;
+}
+.Container-Menu ul li{
+    margin-bottom: .5rem;
+}
