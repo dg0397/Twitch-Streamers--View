@@ -1,3 +1,7 @@
+:root {
+  --purple-twitch : #484c7f;
+  --purple-bar-menu : #AAB0E9
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

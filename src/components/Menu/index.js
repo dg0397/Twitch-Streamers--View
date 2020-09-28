@@ -1,4 +1,3 @@
-import useStreamers from 'hooks/useStreamers';
 import React, { useState } from 'react'
 import { useLocation } from 'wouter';
 import './styles.css'
@@ -30,9 +29,9 @@ export default function Menu() {
                         'Ofline'
                     }
                 </p>
-                <label onClick = {handleClick} >⯆</label>
+                <p onClick = {handleClick} ><span aria-label = "button icon" role = "img" >▼</span></p>
             </div>
-            <ul className = {menuActive && "active"} >
+            <ul className = {menuActive ? "active" : null} >
                 <li onClick = {handleCurrentPage} data-value = '/'>Home</li>
                 <li onClick = {handleCurrentPage} data-value = '/online' >Online</li>
                 <li onClick = {handleCurrentPage} data-value = '/ofline' >Ofline</li>

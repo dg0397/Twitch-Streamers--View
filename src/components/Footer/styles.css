@@ -1,0 +1,16 @@
+footer{
+    background: var(--purple-twitch);
+    width: 100%;
+}
+footer p{
+    width: 100%;
+    padding: .2rem 0;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: white;
+} 
+footer p a{
+    text-decoration: none;
+    letter-spacing: .2rem;
+    color: aliceblue;
+}

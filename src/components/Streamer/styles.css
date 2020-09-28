@@ -1,12 +1,32 @@
 .Streamer{
     display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: 
+    "img title" 
+    "img status" ;
+    justify-items: center;
+    align-content: center;
+    gap: 0 10px;
+    margin-bottom: 1rem;
 }
-.Container-Img{
-    width: 20%;
-    
+.Streamer .Container-Img{
+    grid-area: img;
+    align-self: center;
+    justify-self: center;    
 }
 .Container-Img img{
     width: 100%;
     height: auto;
     border-radius: 50%;
+}
+
+.Streamer h3{
+    grid-area: title;
+    align-self: center;
+    justify-self: center;    
+}
+.Streamer p{
+    grid-area: status;
+    align-self: center;
+    justify-self: center;    
 }

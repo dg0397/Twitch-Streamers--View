@@ -14,6 +14,6 @@ export default function useStreamers(){
             getStreamers(setChannelsStatus,setLoading,{channels : USERS})
         },5000)
         return ()=> clearTimeout(interval)
-    },[])
+    },[setChannelsStatus])
     return {channelsStatus,loading}
 }
