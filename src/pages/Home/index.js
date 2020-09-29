@@ -1,6 +1,7 @@
 import useStreamers from 'hooks/useStreamers'
 import React from 'react'
 import StreamerList from 'components/StreamerList'
+import Loader from 'components/ContentLoader/Loader';
 
 function Home() {
     const {channelsStatus,loading} = useStreamers();
@@ -8,7 +9,7 @@ function Home() {
     return (
         <>
             {
-                loading ? <p>Loading...</p> :
+                loading ? <Loader/> :
                 <StreamerList channels = {channelsStatus}/>
             }
         </>

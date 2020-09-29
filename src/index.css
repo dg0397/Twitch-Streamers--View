@@ -1,6 +1,7 @@
 :root {
   --purple-twitch : #484c7f;
-  --purple-bar-menu : #AAB0E9
+  --purple-bar-menu : #AAB0E9;
+  --dark-purple-bar-menu : #818BDF;
 }
 body {
   margin: 0;

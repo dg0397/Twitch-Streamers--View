@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useLocation } from 'wouter';
-import './styles.css'
+import {ContainerMenu,Menu,MenuOptions,MenuOption} from './styles'
 
-export default function Menu() {
+export default function MenuComponent() {
     const [location, setLocation] = useLocation();
     const [menuActive,setMenuActive] =  useState(false)
 
@@ -18,8 +18,8 @@ export default function Menu() {
     }
 
     return (
-        <div className = 'Container-Menu' >
-            <div className = 'Menu'>
+        <ContainerMenu>
+            <Menu>
                 <p>
                     {
                         location === '/'? 
@@ -30,12 +30,12 @@ export default function Menu() {
                     }
                 </p>
                 <p onClick = {handleClick} ><span aria-label = "button icon" role = "img" >▼</span></p>
-            </div>
-            <ul className = {menuActive ? "active" : null} >
-                <li onClick = {handleCurrentPage} data-value = '/'>Home</li>
-                <li onClick = {handleCurrentPage} data-value = '/online' >Online</li>
-                <li onClick = {handleCurrentPage} data-value = '/ofline' >Ofline</li>
-            </ul>
-        </div>
+            </Menu>
+            <MenuOptions active = {menuActive}>
+                <MenuOption onClick = {handleCurrentPage} data-value = '/' currentCheck = {location === '/'? true : false}>Home</MenuOption>
+                <MenuOption onClick = {handleCurrentPage} data-value = '/online' currentCheck = {location === '/online'? true : false}>Online</MenuOption>
+                <MenuOption onClick = {handleCurrentPage} data-value = '/ofline' currentCheck = {location === '/ofline'? true : false}>Ofline</MenuOption>
+            </MenuOptions>
+        </ContainerMenu>
     )
 }
