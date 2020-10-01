@@ -3,6 +3,7 @@ import {API_URL} from './settings'
 export default function getStreamers(setState,setStatus,{channels}) {
     const promises = channels.map( channel => fetch(`${API_URL}/${channel}`));
     setStatus(true)
+    console.log("fetching")
     Promise.all(promises)
         .then(values => Promise.all(values.map(value => value.json())))
         .then(res => res.map( channel => {

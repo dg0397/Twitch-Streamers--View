@@ -1,15 +1,18 @@
-import {useContext} from 'react';
-import StreamersContext from 'context/StreamerContext'
+import useStreamers from './useStreamers';
 
 
 export default function useGlobalStreamers({typeStatus}){
-    const {channelsStatus} = useContext(StreamersContext) ;
-    console.log(channelsStatus);
-    return channelsStatus.filter( channel => {
-        if(typeStatus === "online"){
-            return channel.partner === true
-        }else{
-            return channel.partner === false
-        }
-    })
+    const {channelsStatus,loading} = useStreamers();
+
+    const dataChannels = channelsStatus.filter( channel => {
+                            if(typeStatus === "online"){
+                                return channel.partner === true
+                            }else if(typeStatus === "ofline"){
+                                return channel.partner === false
+                            }else{
+                                return true
+                            }
+                        })
+                        
+    return { dataChannels,loading }
 }

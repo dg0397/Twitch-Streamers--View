@@ -1,12 +1,12 @@
 import React from 'react'
-import "./styles.css"
+import {Header, Title} from "./styles"
 
 export default function HeaderComponent() {
     return (
-        <header>
-            <h1>
+        <Header>
+            <Title>
                 Twitch Streamers | Users
-            </h1>
-        </header>
+            </Title>
+        </Header>
     )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import logoFallback from './fallback-profile_image.png'
 import {StreamerComponent,StreamerContainerImg,StreamerImg,Title,Link,Status} from './styles'
 
-export default function Streamer({logo,name,url,status,partner}) {
+function Streamer({logo,name,url,status,partner}) {
     return (
         <StreamerComponent status = {partner}>
             <StreamerContainerImg>
@@ -13,3 +13,5 @@ export default function Streamer({logo,name,url,status,partner}) {
         </StreamerComponent>
     )
 }
+
+export default React.memo(Streamer)
