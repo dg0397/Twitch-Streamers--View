@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useLocation } from 'wouter';
-import {ContainerMenu,Menu,MenuOptions,MenuOption} from './styles'
+import {ContainerMenu,Menu,MenuButton,MenuOptions,MenuOption} from './styles'
 
 export default function MenuComponent() {
     const [location, setLocation] = useLocation();
@@ -29,7 +29,7 @@ export default function MenuComponent() {
                         'Ofline'
                     }
                 </p>
-                <p onClick = {handleClick} ><span aria-label = "button icon" role = "img" >▼</span></p>
+                <p onClick = {handleClick} ><MenuButton aria-label = "button icon" role = "img" >▼</MenuButton></p>
             </Menu>
             <MenuOptions active = {menuActive}>
                 <MenuOption onClick = {handleCurrentPage} data-value = '/' currentCheck = {location === '/'? true : false}>Home</MenuOption>
